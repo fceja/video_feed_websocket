@@ -3,8 +3,11 @@ import axios from 'axios';
 
 const VideoStream = () => {
     const [imgSrc, setImgSrc] = useState('');
+    const [error, setError] = useState(false)
 
     useEffect(() => {
+        if (error) { return; }
+
         const fetchImage = async () => {
             try {
                 // fetch data and tell axios to handle as binary
@@ -22,6 +25,7 @@ const VideoStream = () => {
 
             } catch (error) {
                 console.error('Error fetching the image', error);
+                setError(true)
             }
         };
 
@@ -30,12 +34,16 @@ const VideoStream = () => {
 
         // cleanup
         return () => clearInterval(intervalId);
-    }, []);
+    }, [error]);
 
     return (
-        <div>
-            <img src={imgSrc} alt="Webcam Stream" />
-        </div>
+        <>
+            {error ? <div>There was an error.</div> :
+                <div>
+                    <img src={imgSrc} alt="Webcam Stream" />
+                </div>
+            }
+        </>
     );
 };
 
