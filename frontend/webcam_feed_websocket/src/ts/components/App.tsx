@@ -1,4 +1,6 @@
 import React from 'react';
+
+import '/src/scss/components/App.scss'
 import VideoStream from './VideoStream';
 
 const App: React.FC = () => {

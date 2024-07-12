@@ -1,12 +1,15 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
+import "/src/scss/components/VideoStream.scss"
+
 const VideoStream = () => {
     const [imgSrc, setImgSrc] = useState('');
-    const [error, setError] = useState(false)
+    const [error, setError] = useState<boolean>(false);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        if (error) { return; }
+        if (error) { return }
 
         const fetchImage = async () => {
             try {
@@ -26,6 +29,9 @@ const VideoStream = () => {
             } catch (error) {
                 console.error('Error fetching the image', error);
                 setError(true)
+
+            } finally {
+                setIsLoading(false)
             }
         };
 
@@ -38,13 +44,14 @@ const VideoStream = () => {
 
     return (
         <>
-            {error ? <div>There was an error.</div> :
-                <div>
-                    <img src={imgSrc} alt="Webcam Stream" />
-                </div>
+            {error &&
+                <div>There was an error.<br />Is backend running?</div>
+            }
+            {!isLoading && !error &&
+                <div><img className="img-container" src={imgSrc} alt="Webcam Stream" /></div>
             }
         </>
-    );
+    )
 };
 
 export default VideoStream;
