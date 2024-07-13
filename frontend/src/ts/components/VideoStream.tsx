@@ -16,7 +16,7 @@ const VideoStream = () => {
         const connectWebSocket = () => {
             /* attempt connection */
             setLoading(true)
-            webSocketRef.current = new WebSocket('ws://localhost:8080/ws');
+            webSocketRef.current = new WebSocket('ws://localhost:8080/websocket');
 
             /* define websocket close handler */
             webSocketRef.current.onclose = () => {
