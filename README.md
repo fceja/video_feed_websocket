@@ -39,7 +39,7 @@ The front-end, built with React and TypeScript, connects to this endpoint and di
     /></a>
 
 
-### Installation
+## Installation
 1. For instructions to install backend, please see:
     - `~/webcam_feed_websocket/backend/README.md`
 
