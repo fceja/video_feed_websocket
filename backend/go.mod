@@ -1,4 +1,4 @@
-module webcam_feed_websocket
+module video_feed_websocket
 
 go 1.21
 

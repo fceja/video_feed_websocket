@@ -1,5 +1,5 @@
 # Description
-A Go server captures webcam feed and serves it through a WebSocket endpoint.<br/>
+A Go server that captures video feed (webcam) and serves it through a WebSocket endpoint.<br>
 The front-end, built with React and TypeScript, connects to this endpoint and displays the live video feed in the browser.
 
 ## Tools & Technologies
@@ -41,7 +41,7 @@ The front-end, built with React and TypeScript, connects to this endpoint and di
 
 ### Installation
 1. For instructions to install backend, please see:
-    - `~/webcam_feed_websocket/backend/README.md`
+    - `/project_root/backend/README.md`
 
 2. For instructions to install frontend, please see:
-    - `~/webcam_feed_websocket/frontend/README.md`
+    - `/project_root/frontend/README.md`

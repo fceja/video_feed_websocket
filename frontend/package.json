@@ -1,5 +1,5 @@
 {
-  "name": "webcam_feed_websocket",
+  "name": "video_feed_websocket",
   "private": true,
   "version": "0.0.0",
   "type": "module",

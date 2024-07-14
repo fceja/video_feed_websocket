@@ -33,12 +33,12 @@ func handleWebSocket(w http.ResponseWriter, r *http.Request) {
 	defer conn.Close()
 
 	/* open video capture device */
-	webcam, err := gocv.VideoCaptureDevice(0) // zero for first available device
+	videoDevice, err := gocv.VideoCaptureDevice(0) // zero for first available device
 	if err != nil {
 		log.Println("Error opening video capture device:", err)
 		return
 	}
-	defer webcam.Close()
+	defer videoDevice.Close()
 
 	/* create storage for frames */
 	img := gocv.NewMat()
@@ -49,9 +49,9 @@ func handleWebSocket(w http.ResponseWriter, r *http.Request) {
 	defer ticker.Stop()
 
 	for range ticker.C {
-		/* read frame from webcam */
-		if ok := webcam.Read(&img); !ok {
-			log.Println("Error reading image from webcam")
+		/* read frame from video capture device */
+		if ok := videoDevice.Read(&img); !ok {
+			log.Println("Error reading image from video device")
 			continue
 		}
 
