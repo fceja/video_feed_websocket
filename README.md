@@ -1,6 +1,18 @@
 # Description
-A Go server that captures video feed (webcam) and serves it through a WebSocket endpoint.<br>
-The front-end, built with React and TypeScript, connects to this endpoint and displays the live video feed in the browser.
+Contains a backend and frontend directory.
+
+The backend is a Go server that captures video feed (webcam) and serves it through a WebSocket endpoint.<br>
+The frontend connects to the backend endpoint and displays the video feed in the browser.
+
+
+## Installation
+![](https://img.shields.io/badge/OS-Linux%20%7C%20MacOS%20%7C%20Windows-eaeaea)
+1. For instructions to install backend, please see:
+    - `/project_root/backend/README.md`
+
+2. For instructions to install frontend, please see:
+    - `/project_root/frontend/README.md`
+
 
 ## Tools & Technologies
 
@@ -37,12 +49,3 @@ The front-end, built with React and TypeScript, connects to this endpoint and di
       width="40"
       height="40"
     /></a>
-
-
-## Installation
-![](https://img.shields.io/badge/OS-Linux%20%7C%20MacOS%20%7C%20Windows-eaeaea)
-1. For instructions to install backend, please see:
-    - `/project_root/backend/README.md`
-
-2. For instructions to install frontend, please see:
-    - `/project_root/frontend/README.md`
