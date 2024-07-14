@@ -39,7 +39,8 @@ The front-end, built with React and TypeScript, connects to this endpoint and di
     /></a>
 
 
-### Installation
+## Installation
+![](https://img.shields.io/badge/OS-Linux%20%7C%20MacOS%20%7C%20Windows-blue)
 1. For instructions to install backend, please see:
     - `/project_root/backend/README.md`
 
